@@ -120,3 +120,80 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+
+/* Header y Parrafos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  text-align: center;
+}
+
+.title-bar {
+  display: flex;
+  width: 100vw;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.back-btn {
+  position: absolute;
+  left: 10%;
+  top: 96px;
+  height: 30px;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+}
+
+.dark .back-btn {
+  color: white;
+}
+
+.detail-heading {
+  font-size: 1.7rem;
+}
+
+.skeleton_img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(
+    to right,
+    #f3f3f3 0%,
+    #cdcccc 20%,
+    #f3f3f3 40%,
+    #f3f3f3 100%
+  );
+  background-size: 200% 100%;
+  animation: wave-slide 2.5s linear infinite;
+}
+
+.skeleton_info {
+  width: 90%;
+  background: linear-gradient(
+    to right,
+    #f3f3f3 0%,
+    #cdcccc 20%,
+    #f3f3f3 40%,
+    #f3f3f3 100%
+  );
+  background-size: 200% 100%;
+  animation: wave-slide 2.5s linear infinite;
+  border-radius: 5px;
+  height: 21.6px;
+}
+
+@keyframes wave-slide {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}

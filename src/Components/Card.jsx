@@ -17,6 +17,7 @@ const Card = ({ name, username, id }) => {
         <button onClick={addFav} className="favButton">Add fav</button>
     </div>
   );
+  
 };
 
 export default Card;
