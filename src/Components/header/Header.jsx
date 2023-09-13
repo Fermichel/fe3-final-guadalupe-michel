@@ -6,10 +6,12 @@ export function Header() {
   return (
     <header>
       <div className='container'>
+        <div>
           <NavLink to='/' end>
-            <img src='/public/images/DH.png' alt='logo'/>
-          </NavLink>        
-        <Navbar />
+            <img className='img' src='/images/logo.png' alt='logo'/>
+          </NavLink>
+        </div>
+        <Navbar/>
       </div>
     </header>
   )

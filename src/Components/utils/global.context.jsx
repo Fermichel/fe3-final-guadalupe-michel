@@ -1,5 +1,5 @@
-import { createContext, useEffect,useReducer} from "react";
-import { dentistsReducer, favReducer, themeReducer} from "./reducers";
+import { createContext, useEffect,useReducer} from "react"
+import { dentistsReducer, favReducer, themeReducer} from "./reducers"
 
 export const ContextGlobal = createContext(undefined);
 
@@ -15,7 +15,7 @@ const initThemeState = () =>{
   return {them: initialTheme}
 }
 
-const initDentistsState = {dentistsList :[], dentist :{}}
+const initDentistsState = {dentistsList: [], dentist: {}}
 
 const  initFavState = JSON.parse(localStorage.getItem('favs')) || []
 
@@ -67,5 +67,5 @@ export const ContextProvider = ({ children }) => {
     <ContextGlobal.Provider value={{dentistsState,dentistsDispatch,favState,favDispatch,themeState,themeDispatch}}>
       {children}
     </ContextGlobal.Provider>
-  );
-};
+  )
+}

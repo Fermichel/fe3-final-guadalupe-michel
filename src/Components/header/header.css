@@ -1,5 +1,5 @@
 header {
-    background-color: #cfcfcf;
+    background-color: #b7cee2;
     display: flex;
     justify-content: center;
     position: sticky;
@@ -8,9 +8,9 @@ header {
     z-index: 1;
   }
   
-  header .container {
+header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     width: 100%;
     max-width: 80vw;
@@ -21,11 +21,11 @@ header {
     margin: 0;
   }
   
-  header h1 span {
+  header h1 {
     color: rgb(200, 0, 0);
   }
   
-  .dark header h1 span {
+  .dark header h1 {
     color: rgb(236, 47, 47);
   }
   
@@ -81,4 +81,8 @@ header {
   
   .dark header {
     background-color: #2b3035;
+  }
+  .img{
+    height: 80px;
+    width: 190px;
   }

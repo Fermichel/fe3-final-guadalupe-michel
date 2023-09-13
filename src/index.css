@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
+.favButton {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
@@ -19,72 +19,78 @@ code {
   cursor: pointer;
 }
 
-h1{
-  text-align: center;
-}
-
-nav{
-  display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-
-a{
+a {
   color: #000;
   text-decoration: none;
-  margin: 5px;
   cursor: pointer;
 }
-a:hover{
-  color: rgb(136, 136, 136);
-} 
 
 footer {
   display: flex;
   justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
+  align-items: center;
+  width: 100%;
+  position: absolute;
   bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  height: 104px;
+  background-color: #b7cee2;
 }
 
-footer > img{
+footer > img {
   width: 200px;
   margin: 0;
 }
-footer > p{
+footer > p {
   margin: 0;
-  padding-top: 0.7rem;
 }
 
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+.dark footer {
+  background-color: #2b3035;
 }
 
-.card{
+.card-wraper {
+  position: relative;
+}
+
+.card-wraper button {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0;
+}
+
+.card-wraper button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.card {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
   width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  gap: 12px;
+  border-radius: 10px;
+  background-color: #f3f4f4;
+  padding-bottom: 12px;
 }
 
-.card:hover{
+.dark .card {
+  background-color: #2b3035;
+}
+
+.card:hover {
   border: 0.5px solid rgb(206, 217, 142);
 }
 
-.card-grid{
+.card-grid {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
@@ -94,16 +100,44 @@ form{
   margin: 0 auto;
 }
 
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
-td, th {
+.card p {
+  margin: 0;
+  padding: 0;
+}
+
+a.card {
+  color: black;
+}
+
+.dark a.card {
+  color: white;
+}
+
+.dark .favButton {
+  color: white;
+}
+
+.favButton.favorited {
+  color: rgb(236, 47, 47);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
+}
+
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -113,7 +147,7 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+.dark {
   background-color: #12121296;
   color: white;
 }
@@ -121,6 +155,16 @@ tr:nth-child(even) {
   color: white;
 }
 
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 136px;
+}
+
+/* ESTILOS AGREGADOS */
 
 /* Header y Parrafos */
 h1,
