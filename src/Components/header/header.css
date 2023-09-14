@@ -50,7 +50,7 @@ header .container {
   nav .theme-switch {
     padding: 1px;
     border-radius: 1.5rem;
-    background-color: rgb(253 186 116 / 1);
+    background-color: rgb(235, 255, 121);
   }
   
   nav .theme-switch button {

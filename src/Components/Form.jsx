@@ -23,7 +23,7 @@ const Form = () => {
   // handle del nombre con sus validaciones
   const handleName =(e)=>{
     //validamos longitud de mas de 5 y sin espacio en blanco al inicio como en el examen
-    if(e.target.value.length > 5 && e.target.value.charAt(0) !== " "){
+    if(e.target.value.length > 5){
       setData({
         ...data,
         name: {value: e.target.value, isOK: true},

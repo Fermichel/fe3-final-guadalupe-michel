@@ -1,8 +1,8 @@
 export const dentistsReducer = (state, action) => {
   switch (action.type) {
-    case 'GET-DENTISTS':
+    case 'GET_DENTISTS':
       return { dentistsList: action.payload, dentist: state.dentist }
-    case 'GET-DENTIST':
+    case 'GET_DENTIST':
       return { dentistsList: state.dentistsList, dentist: action.payload }
     default:
       throw new Error()
@@ -11,9 +11,9 @@ export const dentistsReducer = (state, action) => {
 
 export const favReducer = (state, action) => {
   switch (action.type) {
-    case 'ADD-FAV':
+    case 'ADD_FAV':
       return [...state, action.payload]
-    case 'DELETE-FAV':
+    case 'DELETE_FAV':
       return state.filter(fav => fav.id !== action.payload)
     default:
       throw new Error()
@@ -22,7 +22,7 @@ export const favReducer = (state, action) => {
 
 export const themeReducer = (state, action) => {
   switch (action.type) {
-    case 'TOGGLE-THEME':
+    case 'TOGGLE_THEME':
       const newTheme = state.theme === 'light' ? 'dark' : 'light'
       localStorage.setItem('theme', newTheme)
       return { ...state, theme: newTheme }

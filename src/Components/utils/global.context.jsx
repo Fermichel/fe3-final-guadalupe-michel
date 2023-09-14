@@ -1,71 +1,77 @@
-import { createContext, useEffect,useReducer} from "react"
-import { dentistsReducer, favReducer, themeReducer} from "./reducers"
+import { createContext, useEffect, useReducer } from 'react';
+import { dentistsReducer, favReducer, themeReducer } from './reducers';
 
 export const ContextGlobal = createContext(undefined);
 
-const initThemeState = () =>{
-  const storedTheme = localStorage.getItem('theme')
+const initThemeState = () => {
+  const storedTheme = localStorage.getItem('theme');
   const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-  ? 'dark'
-  :'ligth'
-  const initialTheme = storedTheme || preferredTheme
+    ? 'dark'
+    : 'light';
+  const initialTheme = storedTheme || preferredTheme;
 
-  localStorage.setItem('theme',initialTheme)
+  localStorage.setItem('theme', initialTheme);
 
-  return {them: initialTheme}
-}
+  return { theme: initialTheme };
+};
 
-const initDentistsState = {dentistsList: [], dentist: {}}
+const initDentistsState = { dentistsList: [], dentist: {} };
 
-const  initFavState = JSON.parse(localStorage.getItem('favs')) || []
+const initFavState = JSON.parse(localStorage.getItem('favs')) || [];
 
 export const ContextProvider = ({ children }) => {
-
-  // Cambio de estado
+  // Theme Ruducer
   const [themeState, themeDispatch] = useReducer(
-    themeReducer,{},initThemeState
-  )
-    useEffect(()=>{
-      const root = document.documentElement
-      if (themeState.theme ==='light'){
-        root.classList.remove('dark')
-      }else{
-        root.classList.add('dark')
-      }
-    },[themeState.theme])
+    themeReducer,
+    {},
+    initThemeState
+  );
 
-  // Renderizar dentistas
-    const[dentistsState, dentistsDispatch] = useReducer(
-    dentistsReducer, initDentistsState
-  )
-  
-    //llamamos a la api
-  const fetchDentistsData = ()=>{
+  useEffect(() => {
+    const root = document.documentElement;
+    if (themeState.theme === 'light') {
+      root.classList.remove('dark');
+    } else {
+      root.classList.add('dark');
+    }
+  }, [themeState.theme]);
+
+  // Dentists Reducer
+  const [dentistsState, dentistsDispatch] = useReducer(
+    dentistsReducer,
+    initDentistsState
+  );
+
+  const fetchDentistsData = () => {
     fetch('https://jsonplaceholder.typicode.com/users')
-    .then ((res)=>{res.json()})
-    .then ((data)=>{
-      dentistsDispatch({type:'GET-DENTISTS', payload: data})
-    })
-    .catch((error)=>{
-      console.error('Hubo problema con la solicitud', error);
-    })
-  }
+      .then((res) => res.json())
+      .then((data) => dentistsDispatch({ type: 'GET_DENTISTS', payload: data }))
+      .catch((err) => console.log(err));
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchDentistsData();
-  },[])
+  }, []);
 
-  // Renderizamos los favoritos
-  const[favState, favDispatch]=useReducer(favReducer,initFavState)
+  // Favs Reducer
+  const [favState, favDispatch] = useReducer(favReducer, initFavState);
 
-  useEffect(()=>{
-    localStorage.setItem('fav',JSON.stringify(favState))
-  },[favState])
-
+  useEffect(() => {
+    localStorage.setItem('favs', JSON.stringify(favState));
+  }, [favState]);
 
   return (
-    <ContextGlobal.Provider value={{dentistsState,dentistsDispatch,favState,favDispatch,themeState,themeDispatch}}>
+    <ContextGlobal.Provider
+      value={{
+        dentistsState,
+        dentistsDispatch,
+        favState,
+        favDispatch,
+        themeState,
+        themeDispatch,
+      }}
+    >
       {children}
     </ContextGlobal.Provider>
-  )
-}
+  );
+};
