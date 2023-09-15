@@ -8,8 +8,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Roboto', sans-serif;
 }
 .favButton {
   background-color: rgba(136, 136, 136, 0.116);
@@ -80,16 +79,24 @@ footer > p {
   border-radius: 10px;
   background-color: #f3f4f4;
   padding-bottom: 12px;
+  font-family: 'Roboto Condensed', sans-serif;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .dark .card {
   background-color: #474d53;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
+  transform: scale(1.05);
   border: 0.5px solid rgb(126, 124, 224);
 }
-
+.dark .card:hover {
+  transform: scale(1.05); 
+}
 .card-grid {
   display: flex;
   justify-content: space-evenly;
@@ -163,8 +170,6 @@ tr:nth-child(even) {
 .content-wrap {
   padding-bottom: 136px;
 }
-
-/* ESTILOS AGREGADOS */
 
 h1,
 h2,

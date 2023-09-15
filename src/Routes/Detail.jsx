@@ -39,7 +39,7 @@ const Detail = () => {
 
       <div className='card-grid'>
         <div className='card' style={{ width: '260px', gap: '8px' }}>
-          <img src='../images/doctor.jpg' alt='doctor' />
+          <img src='../images/doc.png' alt='doctor' />
           <h3 style={{ margin: '0' }}>{name}</h3>
           <strong>
             <p>ID: {id}</p>

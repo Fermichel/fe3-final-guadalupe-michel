@@ -28,7 +28,7 @@ const Card = ({ name, username, id }) => {
       <Link className='card' to={`/detail/${id}`}>
         {!imageLoaded && <div className='skeleton_img'></div>}
         <img
-          src='./images/doctor.jpg'
+          src='./images/doc.png'
           alt='doctor'
           onLoad={handleImageLoad}
           style={{ display: imageLoaded ? 'block' : 'none' }}

@@ -1,0 +1,59 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+    max-width: 340px;
+    min-width: 280px;
+    margin: 2rem auto;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #b7cee2;
+  }
+  
+  .warning {
+    color: rgb(236, 47, 47);
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 0rem;
+  }
+  
+  .success {
+    color: #3da536;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 0rem;
+  }
+  
+  form input {
+    border: none;
+    padding: 0.2rem;
+    height: 15px;
+  }
+  
+  form button {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border:none;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 0.7rem;
+  }
+  
+  form input {
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+  
+  .btn-able:hover {
+    background-color: rgb(155, 155, 155);
+  }
+  
+  .dark form {
+    background-color: #2b3035;
+  }
+  
